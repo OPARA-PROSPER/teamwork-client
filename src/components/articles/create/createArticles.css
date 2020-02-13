@@ -1,0 +1,33 @@
+.createArticle textarea{
+  height: 100vh;
+}
+
+.createArticle input.form-control {
+  font-size: 50px;
+  font-weight: 700;
+  box-shadow: none;
+  border: none;
+  border-left: 1px solid rgba(9,9,9,0.3);
+  margin-top: .5em;
+  /* color: #000000; */
+  /* padding: 0 .5em; */
+  border-radius: 0;
+  /* background: #e6e6e6; */
+}
+
+.createArticle button.btn {
+  background: greenyellow;
+  margin-right: .5em;
+  padding: .1em 1em;
+  border-radius: 0;
+  /* width: 40%; */
+}
+
+.createArticle textarea.form-control {
+  border: none;
+  border-left: 1px solid rgba(9,9,9,0.3);
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 20px;
+  font-weight: 500;
+}
