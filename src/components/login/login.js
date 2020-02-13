@@ -91,7 +91,7 @@ class UserLogin extends Component {
         Don't have account? <Link to="/signup">signup to get started</Link>
         </p>
 
-        <button className="btn" type="submit">Sign In</button>
+        <button className="btn btn-secondary" type="submit">Sign In</button>
       </form>
     )
   }
