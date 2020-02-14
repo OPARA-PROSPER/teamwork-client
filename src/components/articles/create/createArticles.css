@@ -3,11 +3,11 @@
 }
 
 .createArticle input.form-control {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 700;
   box-shadow: none;
   border: none;
-  border-left: 1px solid rgba(9,9,9,0.3);
+  /* border-left: 1px solid rgba(9,9,9,0.3); */
   margin-top: .5em;
   /* color: #000000; */
   /* padding: 0 .5em; */
@@ -25,7 +25,7 @@
 
 .createArticle textarea.form-control {
   border: none;
-  border-left: 1px solid rgba(9,9,9,0.3);
+  /* border-left: 1px solid rgba(9,9,9,0.3); */
   border-radius: 0;
   box-shadow: none;
   font-size: 20px;
