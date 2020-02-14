@@ -6,10 +6,22 @@ class UserSignup extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      firstname: '',
+      lastname: '',
+      gender: '',
+      address: '',
+      jobrole: '',
+      department: '',
       email: '',
       password: '',
     }
 
+    this.handleFirstnameChange = this.handleFirstnameChange.bind(this);
+    this.handleLastnameChange = this.handleLastnameChange.bind(this);
+    this.handleGenderChange = this.handleGenderChange.bind(this);
+    this.handleAddressChange = this.handleAddressChange.bind(this);
+    this.handleJobroleChange = this.handleJobroleChange.bind(this);
+    this.handleDepartmentChange = this.handleDepartmentChange.bind(this);
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.handleFormSubmission = this.handleFormSubmission.bind(this);
@@ -19,6 +31,42 @@ class UserSignup extends Component {
     event.preventDefault();
     
     alert(JSON.stringify(this.state));
+  }
+
+  handleFirstnameChange(event) {
+    this.setState({
+      firstname: event.target.value
+    })
+  }
+
+  handleLastnameChange(event) {
+    this.setState({
+      lastname: event.target.value
+    })
+  }
+
+  handleGenderChange(event) {
+    this.setState({
+      gender: event.target.value
+    })
+  }
+
+  handleAddressChange(event) {
+    this.setState({
+      address: event.target.value
+    })
+  }
+
+  handleJobroleChange(event) {
+    this.setState({
+      jobrole: event.target.value
+    })
+  }
+
+  handleDepartmentChange(event) {
+    this.setState({
+      department: event.target.value
+    })
   }
 
   handleEmailChange(event) {
@@ -36,7 +84,7 @@ class UserSignup extends Component {
   render() {
     return(
       <form className="UserSignup" onSubmit={this.handleFormSubmission}>
-        <h2>Signin to catch up with everyone </h2>
+        <h2>Create an account to connect with your team</h2>
 
         <div className="form-group form-row">
           <div className="col">
@@ -44,8 +92,8 @@ class UserSignup extends Component {
               className="form-control"
               type="text"
               placeholder="firstname"
-              // value={this.state.email}
-              // onChange={this.handleEmailChange}
+              value={this.state.firstname}
+              onChange={this.handleFirstnameChange}
               // required
             />
           </div>
@@ -55,8 +103,8 @@ class UserSignup extends Component {
               className="form-control"
               type="text"
               placeholder="lastname"
-              // value={this.state.email}
-              // onChange={this.handleEmailChange}
+              value={this.state.lastname}
+              onChange={this.handleLastnameChange}
               // required
             />
           </div>
@@ -68,8 +116,8 @@ class UserSignup extends Component {
               className="form-control"
               type="text"
               placeholder="gender"
-              // value={this.state.email}
-              // onChange={this.handleEmailChange}
+              value={this.state.gender}
+              onChange={this.handleGenderChange}
               // required
             />
           </div>
@@ -79,8 +127,8 @@ class UserSignup extends Component {
               className="form-control"
               type="text"
               placeholder="address"
-              // value={this.state.email}
-              // onChange={this.handleEmailChange}
+              value={this.state.address}
+              onChange={this.handleAddressChange}
               // required
             />
           </div>
@@ -92,8 +140,8 @@ class UserSignup extends Component {
               className="form-control"
               type="text"
               placeholder="jobrole (e.g employee)"
-              // value={this.state.email}
-              // onChange={this.handleEmailChange}
+              value={this.state.jobrole}
+              onChange={this.handleJobroleChange}
               // required
             />
           </div>
@@ -103,8 +151,8 @@ class UserSignup extends Component {
               className="form-control"
               type="text"
               placeholder="department"
-              // value={this.state.email}
-              // onChange={this.handleEmailChange}
+              value={this.state.department}
+              onChange={this.handleDepartmentChange}
               // required
             />
           </div>

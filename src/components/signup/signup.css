@@ -3,6 +3,10 @@
   margin: auto;
 }
 
+.UserSignup h2:nth-child(1) {
+  margin-bottom: 1em;
+}
+
 @media (max-width: 768px) {
   .UserSignup {
     width: 95%;
