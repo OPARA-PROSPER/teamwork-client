@@ -29,6 +29,8 @@ class CreateArticle extends Component {
   handleArticleSubmission(event) {
     event.preventDefault();
 
+    if (this.state.title.length === 0 || this.state.article.length) return  alert("empty input field");
+
     alert(JSON.stringify(this.state));
     fetch('/api/v1/articles', {
       method: 'POST',
