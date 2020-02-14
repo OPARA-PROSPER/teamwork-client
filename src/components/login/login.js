@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
+import { signinValidator } from '../../utility/utility';
 import './login.css';
 
 class UserLogin extends Component {
@@ -8,7 +9,8 @@ class UserLogin extends Component {
     this.state = {
       email: '',
       password: '',
-      redirect: ''
+      redirect: '',
+      validatorMessage: ''
     }
 
     this.handleEmailChange = this.handleEmailChange.bind(this);
@@ -17,8 +19,11 @@ class UserLogin extends Component {
   }
 
   handleFormSubmission(event) {
-    // alert(JSON.stringify(this.state));
     event.preventDefault();
+
+    let validator = signinValidator(this.state);
+
+    if (validator.status === 'error') return this.setState({validatorMessage: validator.message});
 
     fetch('/api/v1/auth/signin', {
       method: 'POST',
@@ -30,8 +35,6 @@ class UserLogin extends Component {
     .then(res => res.json())
     .then(data => {
       if (data.status === 'success') {
-        // this.state.redirect = <Redirect to="/dashboard"/>
-        console.log(data);
         this.setState({
           redirect: <Redirect to={{
                       pathname: `/dashboard/${data.data.userID}`,
@@ -61,11 +64,12 @@ class UserLogin extends Component {
   }
 
   render() {
-    return(
+    return (
       <form className="userLogin" onSubmit={this.handleFormSubmission}>
         {this.state.redirect}
         <h2>Signin to begin bonding with your team</h2>
 
+        <span style={{color: 'red'}}>{this.state.validatorMessage}</span>
         <div className="form-group">
           <input
             className="form-control"
@@ -73,7 +77,7 @@ class UserLogin extends Component {
             placeholder="enter your email"
             value={this.state.email}
             onChange={this.handleEmailChange}
-            // required
+            required
           />
         </div>
 
@@ -84,7 +88,7 @@ class UserLogin extends Component {
             placeholder="enter your secret key"
             value={this.state.password}
             onChange={this.handlePasswordChange}
-            // required
+            required
           />
         </div>
         <p>
