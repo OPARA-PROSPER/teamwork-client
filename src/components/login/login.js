@@ -10,7 +10,7 @@ class UserLogin extends Component {
       email: '',
       password: '',
       redirect: '',
-      validatorMessage: ''
+      validatorMessage: null
     }
 
     this.handleEmailChange = this.handleEmailChange.bind(this);
@@ -44,7 +44,7 @@ class UserLogin extends Component {
         return this.state.redirect
       }
 
-      return alert(data.error);
+      return this.setState({validatorMessage: data.error});
     })
     .catch(error => {
       console.log(error);
@@ -69,7 +69,7 @@ class UserLogin extends Component {
         {this.state.redirect}
         <h2>Signin to begin bonding with your team</h2>
 
-        <span style={{color: 'red'}}>{this.state.validatorMessage}</span>
+        <p style={this.state.validatorMessage !== null ? {color: 'white', padding: '.5em', border: '1px solid red', background: 'red'} : null }>{this.state.validatorMessage}</p>
         <div className="form-group">
           <input
             className="form-control"
