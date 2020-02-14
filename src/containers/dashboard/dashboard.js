@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Redirect } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelopeOpenText, faSignOutAlt, faCog } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelopeOpenText, faSignOutAlt, faUserCog } from '@fortawesome/free-solid-svg-icons';
 import CreateArticle from '../../components/articles/create/createArticles';
 import UserNewArticles from '../../components/articles/view/usernewarticles/userNewArticles';
 import './dashboard.css';
@@ -39,7 +39,6 @@ class Dashboard extends Component {
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data.data[0])
       this.setState({
         firstname: data.data[0].firstname,
         lastname: data.data[0].lastname,
@@ -74,7 +73,7 @@ class Dashboard extends Component {
           <div className="asideIcons">
             <FontAwesomeIcon icon={faEnvelopeOpenText}/>
             <span>Notification</span>
-            <FontAwesomeIcon icon={faCog}/>
+            <FontAwesomeIcon icon={faUserCog}/>
             <span>Setting</span>
             <FontAwesomeIcon icon={faSignOutAlt}/>
             <span>Logout</span>
