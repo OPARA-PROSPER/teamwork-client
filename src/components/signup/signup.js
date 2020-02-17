@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import './signup.css';
 
 class UserSignup extends Component {
@@ -14,6 +14,7 @@ class UserSignup extends Component {
       department: '',
       email: '',
       password: '',
+      redirect: ''
     }
 
     this.handleFirstnameChange = this.handleFirstnameChange.bind(this);
@@ -29,8 +30,28 @@ class UserSignup extends Component {
 
   handleFormSubmission(event) {
     event.preventDefault();
-    
-    alert(JSON.stringify(this.state));
+
+    fetch('/api/v1/auth/create-user', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(this.state)
+    })
+    .then(res => res.json())
+    .then(data => { 
+      alert(JSON.stringify(data))
+
+      if (data.status === 'success') {
+        this.setState({
+          redirect: <Redirect to={{pathname: '/', state: {message: 'Your account was successfully created, login to continue'}}}/>
+        })
+
+        return this.state.redirect;
+      }
+    })
+    .catch(error => alert(error))
+
   }
 
   handleFirstnameChange(event) {
@@ -84,6 +105,7 @@ class UserSignup extends Component {
   render() {
     return(
       <form className="UserSignup" onSubmit={this.handleFormSubmission}>
+        {this.state.redirect}
         <h2>Create an account to connect with your team</h2>
 
         <div className="form-group form-row">

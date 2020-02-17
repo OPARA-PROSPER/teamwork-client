@@ -6,7 +6,7 @@ class CreateArticle extends Component {
     super(props);
     this.state = {
       title: '',
-      article: ''
+      article: '',
     }
 
     this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -29,9 +29,8 @@ class CreateArticle extends Component {
   handleArticleSubmission(event) {
     event.preventDefault();
 
-    if (this.state.title.length === 0 || this.state.article.length) return  alert("empty input field");
+    if (this.state.title.length === 0 || this.state.article.length === 0) return  alert("empty input field");
 
-    alert(JSON.stringify(this.state));
     fetch('/api/v1/articles', {
       method: 'POST',
       headers: {
@@ -58,8 +57,8 @@ class CreateArticle extends Component {
   render() {
     return(
       <form className="createArticle" onSubmit={this.handleArticleSubmission}>
-        <button type="submit" className="btn">Publish Article</button>
-        <button type="button" className="btn">Post GIF</button>
+        <button type="submit" className="btn btn-primary">Publish Article</button>
+        <button type="button" className="btn btn-secondary">Post GIF</button>
 
         <div className="form-group">
           <input
