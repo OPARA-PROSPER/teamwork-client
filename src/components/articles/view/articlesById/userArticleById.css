@@ -1,0 +1,64 @@
+.GetUserArticlesById {
+  width: 100%;
+  /* overflow-y: hidden; */
+  /* height: 100vh; */
+}
+
+.UserArticleById, .UserArticleComment {
+  /* padding: 5em; */
+  height: 100vh;
+  overflow-y: scroll;
+}
+.UserArticleComment {
+  background: rgba(170, 196, 199, 0.1);
+  /* border: 1px solid rgba(170, 196, 199, 0.9); */
+}
+
+.UserArticleById span {
+  font-style: italic;
+  color: #007bff;;
+}
+
+.UserArticleById span strong {
+  color: black;
+}
+
+.UserArticleById div:nth-child(1) {
+  border: 1px solid rgba(170, 196, 199, 0.8);
+  width: 90%;
+  margin: 1em auto;
+  padding: 2em;
+  height: 100vh;
+}
+
+.UserArticleCommentPadder {
+  /* border: 1px solid red; */
+  padding: 1em;
+}
+
+.UserArticleById h1 {
+  font-weight: 900;
+}
+
+.UserArticleById .content {
+  font-size: 25px;
+  margin-top: 1em;
+}
+
+.UserArticleComment textarea {
+  /* width: 100%; */
+  height: 200px;
+  border-radius: 0;
+}
+
+.UserArticleComment img {
+  width: 30px;
+  height: 30px;
+  /* border-radius: 100%; */
+  /* border: 1px solid #999; */
+}
+
+.UserArticleComment .comment {
+  margin-left: 3em;
+  margin-top: .5em;
+}
