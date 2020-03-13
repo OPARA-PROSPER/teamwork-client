@@ -5,6 +5,7 @@ import { faEnvelopeOpenText, faSignOutAlt, faUserCog } from '@fortawesome/free-s
 import CreateArticle from '../../components/articles/create/createArticles';
 import UserNewArticles from '../../components/articles/view/usernewarticles/userNewArticles';
 // import UserArticleById from '../../components/articles/view/articlesById/userArticlesById';
+import UserSetting from '../../components/usersetting/userSetting';
 import './dashboard.css';
 import img from '../../img/profile.png';
 
@@ -21,10 +22,37 @@ class Dashboard extends Component {
       address: '',
       role: '',
       redirect: '',
+      UserSetting: {
+        style: {
+          display: 'none'
+        }
+      }
     };
 
     this.handleLogout = this.handleLogout.bind(this);
     this.redirectToSignup = this.redirectToSignup.bind(this);
+    this.showUserSettingComponent = this.showUserSettingComponent.bind(this);
+    this.hideUserSettingComponent = this.hideUserSettingComponent.bind(this);
+  }
+
+  showUserSettingComponent(event) {
+    this.setState({
+      UserSetting: {
+        style: {
+          display: 'block'
+        }
+      }
+    })
+  }
+
+  hideUserSettingComponent(event) {
+    this.setState({
+      UserSetting: {
+        style: {
+          display: 'none'
+        }
+      }
+    })
   }
 
   componentDidMount() {
@@ -100,7 +128,7 @@ class Dashboard extends Component {
           <div className="asideIcons">
             <FontAwesomeIcon icon={faEnvelopeOpenText}/>
             <span>Notification</span>
-            <FontAwesomeIcon icon={faUserCog}/>
+            <FontAwesomeIcon icon={faUserCog} onClick={this.showUserSettingComponent}/>
             <span>Setting</span>
             <FontAwesomeIcon icon={faSignOutAlt} onClick={this.handleLogout}/>
             <span>Logout</span>
@@ -122,6 +150,10 @@ class Dashboard extends Component {
             userToken={this.props.location.state !== undefined ? this.props.location.state.token : null}
             pathname={this.props.location.pathname}
           />
+        </article>
+
+        <article className="userSetting" style={this.state.UserSetting.style} /*onClick={this.hideUserSettingComponent}*/>
+          <UserSetting hideComponent={this.hideUserSettingComponent}/>
         </article>
       </main>
     )
