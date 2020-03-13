@@ -47,7 +47,7 @@ class UserLogin extends Component {
       return this.setState({validatorMessage: data.error});
     })
     .catch(error => {
-      console.log(error);
+      console.log(JSON.stringify(error));
     })
   }
 
@@ -91,9 +91,9 @@ class UserLogin extends Component {
             required
           />
         </div>
-        <p>
+        {/* <p>
         Don't have account? <Link to="/signup">signup to get started</Link>
-        </p>
+        </p> */}
 
         <button className="btn btn-secondary" type="submit">Sign In</button>
       </form>

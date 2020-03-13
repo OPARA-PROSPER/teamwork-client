@@ -106,7 +106,7 @@ class UserSignup extends Component {
     return(
       <form className="UserSignup" onSubmit={this.handleFormSubmission}>
         {this.state.redirect}
-        <h2>Create an account to connect with your team</h2>
+        <h2>Create Employee Account</h2>
 
         <div className="form-group form-row">
           <div className="col">
@@ -201,9 +201,9 @@ class UserSignup extends Component {
             // required
           />
         </div>
-        <p>
+        {/* <p>
         Already have account? <Link to="/">signin to discover what's up</Link>
-        </p>
+        </p> */}
 
         <button className="btn btn-secondary" type="submit">submit details</button>
       </form>
