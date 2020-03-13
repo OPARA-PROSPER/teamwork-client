@@ -84,11 +84,12 @@ class UserNewArticles extends Component {
     })
     .catch(error => alert(error));
 
-    // this.checkArticleUpdate();
+    this.checkArticleUpdate();
   }
 
   componentWillUnmount() {
-    this.checkArticleUpdate = null;
+    // this.checkArticleUpdate = null;
+    clearInterval(this.checkArticleUpdate);
   }
 
   render() {
