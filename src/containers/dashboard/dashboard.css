@@ -69,15 +69,19 @@
 }
 
 .userArticleList {
-  background: rgba(170, 196, 199, 0.1);
+  /* background: rgba(170, 196, 199, 0.1); */
+  background: rgba(5,5,5,.8);
   height: 100vh;
   overflow-y: scroll;
 }
 
 .userArticleList .article {
-  border-bottom: 1px solid rgba(9,9,9,0.1);
-  padding: .2em;
+  border-bottom: 1px solid rgba(225,225,225,0.1);
+  background: rgba(5,5,5,.9);
+  padding: 1em;
+  border-radius: 5px;
   margin-top: 1em;
+  color: #ffffff;
 }
 
 .createArticleSection {
@@ -86,15 +90,33 @@
   overflow-y: scroll;
 }
 
-.createArticleSection::-webkit-scrollbar, .userArticleList::-webkit-scrollbar, .UserArticleById::-webkit-scrollbar, .UserArticleComment::-webkit-scrollbar {
+.createArticleSection::-webkit-scrollbar, .userSettingForm::-webkit-scrollbar, .userArticleList::-webkit-scrollbar, .UserArticleById::-webkit-scrollbar, .UserArticleComment::-webkit-scrollbar {
   width: .7em;
-  height: 10%;
+  /* height: 10%; */
+  display: block;
 }
  
 .createArticleSection::-webkit-scrollbar-thumb, .userArticleList::-webkit-scrollbar-thumb, .UserArticleById::-webkit-scrollbar-thumb, .UserArticleComment::-webkit-scrollbar-thumb {
   /* background-color: rgba(230, 230, 230, 0.9); */
   background-color: #343a40!important;
-  height: 10%;
+  border-left: none;
+  border-right: none;
+}
+
+.userSettingForm::-webkit-scrollbar-thumb {
+  background-color: #ffffff!important;
+  border-left: none;
+  border-right: none;
+}
+
+.createArticleSection::-webkit-scrollbar-track-piece:start {
+  background: transparent;
+  /* margin-top: 0; */
+}
+
+.createArticleSection::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+  /* margin-bottom: 500px; */
 }
 
 .userNewArticles h4, .userNewArticles h5 {

@@ -7,11 +7,21 @@
 .UserArticleById, .UserArticleComment {
   /* padding: 5em; */
   height: 100vh;
+  /* padding: 3em 0; */
   overflow-y: scroll;
 }
 .UserArticleComment {
-  background: rgba(170, 196, 199, 0.1);
+  /* background: rgba(170, 196, 199, 0.1); */
+  background: rgba(5, 5, 5, .9);
+  color: #ffffff;
   /* border: 1px solid rgba(170, 196, 199, 0.9); */
+}
+
+.UserArticleHeading {
+  /* background: rgba(170, 196, 199, .1); */
+  background: rgba(5, 5, 5, .8);
+  padding: 2em;
+  color: #ffffff;
 }
 
 .UserArticleById span {
@@ -20,14 +30,14 @@
 }
 
 .UserArticleById span strong {
-  color: black;
+  color: #ffffff;
 }
 
 .UserArticleById div:nth-child(1) {
   border: 1px solid rgba(170, 196, 199, 0.8);
   width: 90%;
   margin: 1em auto;
-  padding: 2em;
+  /* padding: 2em; */
   height: 100vh;
 }
 
@@ -39,10 +49,14 @@
 .UserArticleById h1 {
   font-weight: 900;
 }
+.UserArticleComment h3 {
+  margin-top: 1em;
+}
 
 .UserArticleById .content {
-  font-size: 25px;
+  font-size: 22px;
   margin-top: 1em;
+  padding: 0 1em;
 }
 
 .UserArticleComment textarea {
@@ -54,11 +68,18 @@
 .UserArticleComment img {
   width: 30px;
   height: 30px;
-  /* border-radius: 100%; */
+  border-radius: 100%;
   /* border: 1px solid #999; */
 }
 
+.commentSection {
+  border: .5px solid rgba(235, 235, 235, 0.8);
+  padding: .5em;
+  /* border-radius: 5px; */
+  margin-top: .5em;
+}
+
 .UserArticleComment .comment {
-  margin-left: 3em;
+  /* margin-left: 3em; */
   margin-top: .5em;
 }
