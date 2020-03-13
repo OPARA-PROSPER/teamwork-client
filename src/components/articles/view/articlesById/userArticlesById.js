@@ -29,8 +29,10 @@ class UserArticleById extends Component {
         <article className="row no-gutters justify-content-center">
           <section className="col-lg-7 UserArticleById">
             <div>
-              <h1>{this.state.title}</h1>
-              <span><strong>author: </strong>{this.state.author}</span> | <span><strong>written: </strong>{this.state.createdAt}</span>
+              <section className="UserArticleHeading">
+                <h1>{this.state.title}</h1>
+                <span><strong>author: </strong>{this.state.author}</span> | <span><strong>written: </strong>{this.state.createdAt}</span>
+              </section>
 
               <div className="content">
                 {this.state.article}
@@ -50,18 +52,18 @@ class UserArticleById extends Component {
 
             <h3>Comments:</h3>
 
-            <div>
+            <div className="commentSection">
               {/* <div> */}
-                <img src={img} alt="commentor"/> <span style={{fontWeight: '600', marginLeft: '.2em'}}> kodekage</span>
+                <img src={img} alt="commentor"/> <span style={{marginLeft: '.2em'}}> kodekage</span>
               {/* </div> */}
               <p className="comment">
                 {this.state.comment}
               </p>
             </div>
 
-            <div>
+            <div className="commentSection">
               {/* <div> */}
-                <img src={img} alt="commentor"/> <span style={{fontWeight: '600', marginLeft: '.2em'}}> codemon</span>
+                <img src={img} alt="commentor"/> <span style={{marginLeft: '.2em'}}> codemon</span>
               {/* </div> */}
               <p className="comment">
                 {this.state.comment}
